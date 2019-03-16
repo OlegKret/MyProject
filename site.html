@@ -1,11 +1,40 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <title>Работа с узлами DOM - Свойства</title>
+    <script type="text/javascript">
+
+        // Основные типы узлов
+        // Интерфейс           | Константа nodeType            | Значение nodeType
+        // ------------------------------------------------------------------------
+        // Element             | Node.ELEMENT_NODE             | 1
+        // Text                | Node.TEXT_NODE                | 3
+        // Comment             | Node.COMMENT_NODE             | 8
+        // Document            | Node.DOCUMENT_NODE            | 9
+        // ------------------------------------------------------------------------
+
+        // Свойства для навигации по DOM
+        // childNodes - массив всех дочерних узлов
+        // firstChild - первый дочерний узел
+        // lastChild - последний дочерний узел
+        // nextSibling - следующий узел расположенный на одном уровне с текущим
+
+// parentNode - родительский узел для текущего элемента
+
+        window.onload = function () {
+
+            var e = document.getElementById("list");
+            // childNodes - получение всех дочерних узлов.
+            for (var i = 0; i < e.childNodes.length; ++i) {
+               e.firstChild.style.color = "red";
+			   e.lastChild.style.color="green";
+               // alert(e.childNodes[i].nodeType);
+            }
+        }
+    </script>
 </head>
 <body>
-
+    <ul id="list"><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>
 </body>
 </html>
+
